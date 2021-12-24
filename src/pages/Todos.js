@@ -9,15 +9,15 @@ const Todos = observer(() => {
     }
     return(
         <div className="todo_content">
-            <div className="sort_list">
-            <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
-                <ToggleButton id="tbg-btn-1" value='favourite'>
+            <div className="todo_content_sort_list">
+            <ToggleButtonGroup  style={{margin:10}} type="checkbox" value={value} onChange={handleChange}>
+                <ToggleButton id="tbg-btn-1" value='favourite' variant={'outline-dark'}>
                     favourite
                 </ToggleButton>
-                <ToggleButton id="tbg-btn-2" value='done' disabled={value.includes('not done') ? true : false}>
+                <ToggleButton variant={'outline-dark'} id="tbg-btn-2" value='done' disabled={value.includes('not done') ? true : false}>
                     done
                 </ToggleButton>
-                <ToggleButton id="tbg-btn-3" value='not done' disabled={value.includes('done') ? true : false}>
+                <ToggleButton variant={'outline-dark'} id="tbg-btn-3" value='not done' disabled={value.includes('done') ? true : false}>
                     not done
                 </ToggleButton>
             </ToggleButtonGroup>

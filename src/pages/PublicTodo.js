@@ -2,12 +2,11 @@ import React, {useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 import { useState } from 'react'
 import Card from "react-bootstrap/Card"
-import {observer} from "mobx-react-lite";
 import {todoPublic} from "../http/todoAPI"
 
 
 
-const PublicTodo = observer(() => {
+const PublicTodo = () => {
     const {link} = useParams()
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
@@ -26,7 +25,7 @@ const PublicTodo = observer(() => {
             </Card>
     </div>
     )
-})
+}
 
 export default PublicTodo
 

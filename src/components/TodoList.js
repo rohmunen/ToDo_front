@@ -27,28 +27,19 @@ const NewTodoList = observer(({sort}) => {
     }, [sort])
     return (
         <div>
-        <Modal 
-        className="modal"
-        isOpen={modalActive} 
-        style={{ content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            ottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-            },}} 
-        
-            >
-                <div className='modal-content'>
-                <p>Delete todo?</p>
-                    <Button onClick={() => {console.log(id);todoDelete(id);todoContext.removeTodo(id); setModalActive(!modalActive)}}>Delete</Button>
-                    <Button onClick={() => setModalActive(!modalActive)}>Cancel</Button>
+            <Modal 
+                className="modal"
+                isOpen={modalActive} 
+                >
+                <div style={{borderRadius:15}} className='modal_content'>
+                <p style={{alignSelf:'center'}}>Are you sure you want to delete todo?</p>
+                    <Button style={{marginLeft:10, marginRight:10}} className='modal_content_button' onClick={() => {console.log(id);todoDelete(id);todoContext.removeTodo(id); setModalActive(!modalActive)}} variant={'outline-danger'}>Delete</Button>
+                    <Button style={{marginBottom:10, marginLeft:10, marginRight:10}} className='modal_content_button' onClick={() => setModalActive(!modalActive)} variant={'outline-dark'}>Cancel</Button>
                 </div>
-        </Modal>
+            </Modal>
             {todoContext.todos.map(todo =>
                 <div key={todo.id} className="todo">
-                    <a href={url + todo.id} style={todo.is_done ? {textDecoration:'line-through'}:{textDecoration:'none'}}>{todo.is_favourite ? '🌟':''}{todo.title}</a>
+                    <a href={url + todo.id} style={todo.is_done ? {textDecoration:'line-through'}:{textDecoration:'none'}}>{todo.is_favourite ? '⭐':''}{todo.title}</a>
                     <Button style={{marginLeft:10}} onClick = {() => {setId(todo.id); setModalActive(true);console.log(todo.id)}}
                         variant="outline-danger"
                     >✕</Button>
@@ -59,7 +50,7 @@ const NewTodoList = observer(({sort}) => {
                         variant="outline-warning"
                     >☆</Button>
                 </div>
-                )}
+            )}
         </div>
     )
 })

@@ -16,10 +16,10 @@ const NavBar = observer(() => {
     return ( 
         <Navbar bg="dark" variant="dark">
         <Container>
-        <NavLink style={{color:'white'}} to={HOME_ROUTE}>Todo</NavLink>
+        <NavLink className='todo_logo' style={{color:'white'}} to={HOME_ROUTE}>TODO</NavLink>
         {user.isAuth ?
         <Nav className='ml-auto'>
-            <Button style={{marginRight:10}} variant={'outline-light'} onClick={()=>{logout(); history.push(HOME_ROUTE); user.setIsAuth(false)}}>Logout</Button>
+            <Button style={{marginRight:10}} variant={'outline-light'} onClick={()=>{logout(); document.location.reload(); history.push(HOME_ROUTE); user.setIsAuth(false)}}>Logout</Button>
             <Button style={{marginRight:10}} variant={'outline-light'} onClick={()=>{history.push(CHANGE_PASSWORD)}}>Change password</Button>
             <Button style={{marginRight:10}} variant={'outline-light'} onClick={() => history.push(TODO_ROUTE)}>Create todo</Button>
             <Button style={{marginRight:10}} variant={'outline-light'} onClick={() => history.push(TODOS_ROUTE)}>Todo list</Button>

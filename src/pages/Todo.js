@@ -38,10 +38,9 @@ const Todo = observer(() => {
             <div className = 'todo' style={{justifyContent:"center", alignItems:"center"}}>
             <Card>
                 <Alert variant='dark' show={state}>
-                <Alert.Link href={link}>an example link</Alert.Link>. Give it a click if you
-                like.
+                <Alert.Link href={link}>A link to public todo</Alert.Link>.
                 <Button onClick={() => setState(false)} variant="outline-success">
-                    Close me y'all!
+                    Close me
                 </Button>
                 </Alert>
                 <textarea

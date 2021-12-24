@@ -1,48 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
-    margin: 0;
-    font-family: "Quicksand";
-    color: #333;
-  }
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
 a {
   color: #333;
 }
 
 .modal {
-  height: 20vh;
-  width: 50vw;
+  height: 100vh;
+  width: 100vw;
   background-color: rgba(0,0,0,0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .modal_content {
-  padding: 20px;
-  border-radius: 12px;
+  width: 35%;
+  height: 25%;
   background-color: white;
-  height: 200px;
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.modal_content_button {
+  order:1;
+  width:100;
+  height:40;
+  align-self:'flex-end';
 }
 
 .todo_content{
-  display: flexbox;
+  display: flex;
+  flex-direction: column;
 }
 
-.sort_list{
-  width: 100vw;
-  justify-content: center;
+.todo_content_sort_list{
   display:flex;
+  justify-content: center;
 }
 
 .todo{
-
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 5px;
+}
+
+.todo_logo {
+  text-decoration: none;
 }
